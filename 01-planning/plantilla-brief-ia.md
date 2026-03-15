@@ -2,49 +2,63 @@
 
 ## 1. Título de la tarea
 
-Nombre claro y específico de la funcionalidad o servicio a implementar.
+Nombre claro y específico de la tarea, funcionalidad o servicio a implementar.
 
-Ejemplo:
-Servicio Desacoplado de Cálculo de Impuestos
+Ejemplos:
+ - Servicio de cálculo de gastos personales segmentados
+ - Diseño y desarrollo de un sistema de monitoreo de tickets de soporte técnico
+ - Interfaz de anonimización dinámica (automatica-manual) de respuestas JSON de APIs.
 
 ---
 
 ## 2. Contexto
 
-Describe el problema actual y por qué se necesita esta solución.
+### Objetivo de la tarea
+
+Define claramente qué se espera lograr.
+
+Ejemplos:
+
+- Crear una landing page para un salon de belleza
+- Resumir una investigación técnica
+- Proponer posibles soluciones a un problema
+- Generar documentación estructurada
+- Diseñar un proceso o flujo de trabajo
+
+### Problemática actual
+
+Describe el sistema actual y por qué se necesita esta solución.
 
 Incluye:
 
-- Cómo funciona el sistema actualmente
-- Qué problema existe (acoplamiento, deuda técnica, escalabilidad, etc.)
+- Cómo funciona actualmente el sistema o proceso
+- Qué problema o necesidad existe (trabajo manual, sincronizacion, escalabilidad, etc.)
 - Qué se busca lograr con esta implementación
+- (Opcional) Quién será el usuario o usiarios finales de la solución/herramienta y que podrá lograr con ella
 
-Ejemplo de estructura:
+Estructura sugerida (adiciona o remueve de ser necesario):
 
-El sistema actual \***\*\_\_\_\_\*\***.
-Esto genera problemas como \***\*\_\_\_\_\*\***.
-
-El objetivo de esta tarea es \***\*\_\_\_\_\*\*** para mejorar \***\*\_\_\_\_\*\***.
-
----
-
-## 3. Requerimientos técnicos
-
-### Lenguaje / Stack
-
-- Lenguaje:
-- Versión mínima:
-- Framework (si aplica):
-
-Ejemplo:
-
-- Python 3.9+
-- FastAPI
-- PostgreSQL
+- El sistema actual \***\*\_\_\_\_\*\***.
+- Esto genera problemas como \***\*\_\_\_\_\*\***.
+- El objetivo es \***\*\_\_\_\_\*\*** para mejorar \***\*\_\_\_\_\*\***.
+- (Opcional) El usuario final es \***\*\_\_\_\_\*\*** deberá ser capáz de \***\*\_\_\_\_\*\***.
 
 ---
 
-### Arquitectura
+## 3. Requerimientos de la solución
+
+Requisitos que delimitan la solución, haciéndola compatible con tu sistema, tus preferencias y tus posibilidades.
+
+### Lenguaje / Stack (si aplica)
+
+- Lenguaje / Versión mínima
+- Framework (si aplica)
+- Modelos de IA disponible
+- Otras herramientas
+
+---
+
+### Arquitectura (si aplica)
 
 Describe patrones o principios a usar.
 
@@ -59,7 +73,19 @@ Ejemplo:
 
 ### Input esperado
 
-Define los datos de entrada.
+Define o describe los datos que se esperan como entrada.
+
+Ejemplo:
+
+```python
+InputObject
+- field_1: type
+- field_2: type
+```
+
+### Output esperado
+
+Define o describe el resultado o modelo de salida esperado.
 
 Ejemplo:
 
@@ -71,14 +97,37 @@ InputObject
 
 ### 4. Constraints (Restricciones)
 
-- No usar librerías externas salvo las aprobadas por el equipo.
+Reglas que la solución debe respetar.
+
+Ejemplos:
+
+- No usar librerías externas salvo las expresamente autorizadas o aquellas mencionadas en **Requerimientos de la solución**.
+- Integrar solo los modelos de IA expresamente autorizados o aquellos mencionados en los **Requerimientos de la solución**.
 - Implementar type hints en todo el código.
-- Seguir principios SOLID y buenas prácticas del lenguaje.
-- Separar claramente el dominio, estrategias y servicios principales.
+- Implementar buenas prácticas del lenguaje o tecnología utilizada.
+- Mantener una arquitectura clara y modular.
 
-### 5. Definition of Done (DoD)
+## 5. Plan de implementación esperado
 
-El trabajo se considera terminado cuando:
+Antes de generar la solución final, describe brevemente el enfoque o plan de implementación propuesto.
 
-- El código pasa linters y convenciones de estilo adoptadas por el equipo (ej: flake8, black).
-- La cobertura de tests unitarios es al menos 90%.
+Incluye:
+
+- Componentes principales
+- Flujo de datos
+- Funciones, módulos o credenciales necesarios
+- Decisiones y restricciones de diseño relevantes
+
+El objetivo es **validar el enfoque antes de generar la implementación final.**
+
+
+### 6. Definition of Done (DoD)
+
+Checklist de criterios verificables. 
+La tarea o solución se considera terminada cuando, por ejemplo:
+
+ - El formato de salida cumple con el **Output esperado**
+ - La solución se ejecuta sin errores
+ - Se cumplen las **Restricciones** planteadas
+ - Se pasan los tests funcionales establecidos
+ - Se realiza una verificación humana
