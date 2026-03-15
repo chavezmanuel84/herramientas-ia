@@ -1,80 +1,82 @@
-# Checklist de Revisión
+# Protocolo de Review para resultados generados con IA
 
-## 1. Alucinaciones de librerías
+## 1. Verificación de fuentes o dependencias
 
 ### Pregunta clave
 
-¿Ese import realmente existe?
+¿Las herramientas, librerías, APIs o referencias mencionadas realmente existen?
 
 La IA puede inventar:
 
 - librerías
 - funciones
-- APIs
+- endpoints
 - métodos
+- documentación
 
 **Verificar:**
 
 - documentación oficial
-- existencia real del paquete
-- compatibilidad con la versión usada
+- existencia real de la herramienta o API
+- compatibilidad con la versión utilizada
 
 ### Checklist
 
-- [ ] Los imports existen
-- [ ] Las funciones usadas son reales
-- [ ] La API corresponde a la versión actual
+- [ ] Las herramientas o librerías mencionadas existen
+- [ ] Las funciones o métodos utilizados son reales
+- [ ] Las APIs o endpoints corresponden a la documentación oficial actual
 
-## 2. Lógica de negocio sutil
+## 2. Corrección lógica
 
 ### Pregunta clave
 
-¿La lógica es realmente correcta?
+¿La solución o explicación es realmente correcta?
 
 **Errores comunes generados por IA:**
 
+- tipos de datos/fechas incorrectos o incompatibles
+- conclusiones apresuradas
 - cálculos incorrectos
-- redondeos incorrectos
-- manejo incorrecto de fechas
-- uso de float para dinero
+- supuestos no justificados
 
 ### Checklist
 
-- [ ] Los cálculos son correctos
-- [ ] El manejo de fechas es consistente
-- [ ] No se usa float para dinero
-- [ ] Edge cases están contemplados
+- [ ] La lógica del análisis o solución es correcta
+- [ ] No hay conclusiones sin evidencia
+- [ ] Los cálculos o razonamientos son correctos
+- [ ] Se contemplan casos límite o escenarios alternativos
 
-## 3. Seguridad
+## 3. Riesgos y Seguridad
 
 ### Pregunta clave
 
-¿El código introduce riesgos de seguridad?
+¿La solución introduce riesgos técnicos o de seguridad?
 
-La IA puede generar código funcional pero inseguro.
+La IA puede generar soluciones funcionales pero inseguras.
 
 **Revisar:**
 
 - validación de inputs
-- inyección (SQL, comandos, etc.)
-- exposición de secretos
-- manejo de datos sensibles
+- exposición de secretos o datos sensibles
+- manejo de credenciales
+- riesgos de inyección (SQL, comandos, etc.)
 
 ### Checklist
 
-- [ ] Inputs están validados
-- [ ] No hay riesgo de inyección
-- [ ] No se exponen credenciales
+- [ ] Los inputs están correctamente validados
+- [ ] No se exponen credenciales o secretos
 - [ ] No se filtran datos sensibles
+- [ ] No se introducen riesgos de seguridad evidentes
 
-## 4. Context window
+## 4. Consistencia con el Brief (Context Window)
 
 ### Pregunta clave
 
-¿La IA olvidó algo del brief?
+¿La respuesta realmente cumple con el Brief original?
 
 Cuando el contexto es largo la IA puede ignorar:
 
+- objetivos
 - constraints
 - decisiones arquitectónicas
 - requisitos técnicos
@@ -82,35 +84,39 @@ Cuando el contexto es largo la IA puede ignorar:
 
 ### Checklist
 
-- [ ] El código respeta el brief original
+- [ ] La solución respeta el Brief original
 - [ ] Se cumplen los constraints definidos
-- [ ] No se agregaron dependencias innecesarias
+- [ ] Se respetan los inputs y outputs esperados
 - [ ] Se cumple la Definition of Done
 
-## 5. Punto personalizado del proyecto
+## 5. Criterios específicos del proyecto
 
-Este punto depende de tu stack o arquitectura.
+Este punto depende del tipo de tarea o del stack utilizado.
 
 **Ejemplos comunes:**
 
+- compatibilidad con arquitectura o sistema existente
 - cobertura de tests
-- métricas y observabilidad
 - logging
 - performance
-- compatibilidad con arquitectura
+- métricas y observabilidad
+- calidad de la documentación
+- claridad de la explicación
 
 ### Checklist
 
 - [ ] Tests cubren el código nuevo
 - [ ] Logs no exponen datos sensibles
-- [ ] Performance es aceptable
-- [ ] Métricas funcionan correctamente
+- [ ] Performance es aceptable y mejora la experiencia anterior
+- [ ] Las métricas son reales y funcionan correctamente
+- [ ] La solución es mantenible o escalable
+- [ ] El tamaño de la solución es razonable para el contexto del proyecto
 
 ## Resultado del Review
 
-- [ ] El código pasa los 5 puntos del protocolo
-- [ ] Se hicieron correcciones necesarias
-- [ ] El código está listo para commit
+- [ ] El resultado pasa todos los puntos del protocolo de revisión
+- [ ] Se realizaron las correcciones necesarias
+- [ ] El resultado está listo para integración o uso
 
 **Reviewer:** ____________________  
 **Fecha:** ____________________
